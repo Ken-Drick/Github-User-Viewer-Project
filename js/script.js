@@ -58,6 +58,7 @@ function createErrorCard(message) {
 function createUserCard(user) {
   const userID = user.login || user.name;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
+  const userEmail = user.email ? `<p>${user.email}</p>` : "";
   const cardHTML = `
         <div class="card">
             <div>
@@ -65,6 +66,7 @@ function createUserCard(user) {
             </div>
             <div class="user-info">
                 <h2>${userID}</h2>
+                <p><strong>User Email: </strong><a href="${user.email}">${user.email}</a></p>
                 ${userBio}
                 <ul>
                     <li>
