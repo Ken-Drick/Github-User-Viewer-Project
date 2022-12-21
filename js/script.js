@@ -59,6 +59,8 @@ function createUserCard(user) {
   const userID = user.login || user.name;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const userEmail = user.email ? `<p>${user.email}</p>` : "";
+  const userLocation = user.location ? `<p>${user.location}</p>` : "";
+  const userHiraeble = user.hireable ? `<p>${user.hireable}</p>` : "";
   const cardHTML = `
         <div class="card">
             <div>
@@ -66,7 +68,9 @@ function createUserCard(user) {
             </div>
             <div class="user-info">
                 <h2>${userID}</h2>
+                <p><strong>Location: </strong>${user.location}</p>
                 <p><strong>User Email: </strong><a href="${user.email}">${user.email}</a></p>
+                <p><strong>Available for Hire: </strong>${user.hireable}</p>
                 ${userBio}
                 <ul>
                     <li>
